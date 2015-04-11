@@ -7,35 +7,35 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <div id="logo"><a class="navbar-brand boom" href="/"><canvas id="myCanvas"></canvas></a></div>
+        <div id="logo"><%= link_to 'MCDUFF PHYSICS', root_path %></div>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a href="/ap1/">PHYSICS 1</a>
+          <%= link_to 'PHYSICS 1', ap1_path %>
           </li>
           <li>
-            <a href="/apcm/">MECHANICS</a>
+          <%= link_to 'MECHANICS', mechanics_path%>
           </li>
           <li>
-            <a href="/apcem/">E&amp;M</a>
+          <%= link_to 'E&M', emag_path%>
           </li>
           <li>
-            <a href="/ttennis/">PING PONG</a>
+          <%= link_to 'PING PONG', ping_pong_path%>
           </li>
           <li>
-            <a href="/sci_oly/">SCIENCE OLYMPIAD</a>
+          <%= link_to 'SCI OLY', sci_oly_path%>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="http://www.cherokee.k12.ga.us/Schools/riverridge-hs/default.aspx">RIVER RIDGE</a>
+          <%= link_to 'RIVER RIDGE',"http://www.cherokee.k12.ga.us/Schools/riverridge-hs/default.aspx" %>
           </li>
           <li>
-            <a href="/contact/">CONTACT</a>
+          <%= link_to 'CONTACT', contact_path %>
           </li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
-  
+
   </header>

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-
-
-  get 'static_pages/contact'
-
+  get 'contact' => 'static_pages#contact'
+  get 'mechanics' => 'static_pages#mechanics'
+  get 'emag' => 'static_pages#emag'
+  get 'ap1' => 'static_pages#ap1'
+  get 'ping_pong' => 'static_pages#ping_pong'
+  get 'sci_oly' => 'static_pages#sci_oly'
   get 'users/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
