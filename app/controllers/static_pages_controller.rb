@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   attr_reader :page
   def home
     @page = 'main'
-    @title = @page.upcase
+    @title = "MCDUFF PHYSICS"
   end
 
   def contact
