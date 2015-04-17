@@ -1,5 +1,5 @@
 class ProblemsController < ApplicationController
-  belongs_to :assignment
+# belongs_to :assignment
   before_filter :common_content, :except => [:destroy, :delete]
   def index
   end
