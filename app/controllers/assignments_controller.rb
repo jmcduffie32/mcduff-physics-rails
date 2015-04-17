@@ -1,6 +1,10 @@
 class AssignmentsController < ApplicationController
+  has_many :problems
+  accepts_nested_attributes_for :problems
   before_filter :common_content, :except => :destroy
+
   def new
+    @assignment = Assignment.new
   end
 
   def index
@@ -20,6 +24,9 @@ class AssignmentsController < ApplicationController
 
   def destroy
   end
+
+  def assignment_params
+    params.require(:assignment).permit(
 
   private
 
