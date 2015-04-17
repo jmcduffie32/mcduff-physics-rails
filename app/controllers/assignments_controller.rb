@@ -1,6 +1,6 @@
 class AssignmentsController < ApplicationController
-  has_many :problems
-  accepts_nested_attributes_for :problems
+ #has_many :problems
+ #accepts_nested_attributes_for :problems
   before_filter :common_content, :except => :destroy
 
   def new
