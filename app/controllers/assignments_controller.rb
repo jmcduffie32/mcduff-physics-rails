@@ -25,9 +25,9 @@ class AssignmentsController < ApplicationController
   def destroy
   end
 
-  def assignment_params
-    params.require(:assignment).permit(
-
+ # def assignment_params
+ #  params.require(:assignment).permit(
+ #end
   private
 
   def common_content
