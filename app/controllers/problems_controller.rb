@@ -1,5 +1,4 @@
 class ProblemsController < ApplicationController
-# belongs_to :assignment
   before_filter :common_content, :except => [:destroy, :delete]
   def index
   end
@@ -23,8 +22,10 @@ class ProblemsController < ApplicationController
   end
 
   private
-
-  def common_content
-    @page = "main"
-  end
+    def problem_params
+      params.require(:problem)
+    end
+    def common_content
+      @page = "main"
+    end
 end

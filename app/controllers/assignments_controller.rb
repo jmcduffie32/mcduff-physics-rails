@@ -1,6 +1,4 @@
 class AssignmentsController < ApplicationController
- #has_many :problems
- #accepts_nested_attributes_for :problems
   before_filter :common_content, :except => :destroy
 
   def new
@@ -8,15 +6,29 @@ class AssignmentsController < ApplicationController
   end
 
   def index
+    @assignments = Assignment.order(:created_at)
   end
 
   def create
+    @assignment = Assignemnt.new(assignment_params)
+    #add each submitted problem to the assignment
+    problem_list.each do |prob|
+      @assignment.problems << prob
+    end
+
+    if @assignment.save
+      flash[:success] = "Assignment created successfully"
+      redirect_to @assignment
+    else
+      render 'new'
+    end
   end
 
   def edit
   end
 
   def show
+    @assignment = Assignment.find(params[:id])
   end
 
   def update
@@ -25,12 +37,17 @@ class AssignmentsController < ApplicationController
   def destroy
   end
 
- # def assignment_params
- #  params.require(:assignment).permit(
- #end
   private
 
-  def common_content
-    @page = "main"
-  end
+    def assignment_params
+      params.require(:assignment).permit(:name)
+    end
+
+    def problem_list
+      params.require(:problems)
+    end
+
+    def common_content
+      @page = "main"
+    end
 end
