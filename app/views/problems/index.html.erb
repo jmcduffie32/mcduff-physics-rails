@@ -1,2 +1,16 @@
-<h1>Problems#index</h1>
-<p>Find me in app/views/problems/index.html.erb</p>
+<h1>Problems</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Problem Text</th>
+    <th>Topic</th>
+  </tr>
+  <% @problems.each do |problem| %>
+    <tr>
+      <td><%= link_to problem.id, problem %></td>
+      <td><%= problem.problem_text %></td>
+      <td><%= problem.topic %></td>
+    </tr>
+  <% end %>
+</table>
