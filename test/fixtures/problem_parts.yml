@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  statement: MyText
+  statement: "This is problem part 1a"
   answer: 1.5
+  problem: one
 
 two:
-  statement: MyText
+  statement: "This is problem part 1b"
   answer: 1.5
+  problem: one

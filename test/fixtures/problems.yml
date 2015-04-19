@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  problem_id: 1
-  problem_text: MyText
-  topic: MyString
+  problem_text: "This is problem #1"
+  topic: "Kinematics"
 
 two:
-  problem_id: 1
-  problem_text: MyText
-  topic: MyString
+  problem_text: "This is problem #2"
+  topic: "Newton's Laws"
