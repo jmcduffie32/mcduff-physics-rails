@@ -138,12 +138,12 @@ input {
   }
 }
 
-/* users index */
-.user_col {
+/* tables  */
+td {
   padding: 0 30px 0 30px;
   border: 1px solid #bbb;
 }
 
-.email_col {
-  @extend .user_col;
+th {
+  text-align: center;
 }

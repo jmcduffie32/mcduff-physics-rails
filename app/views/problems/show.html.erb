@@ -2,3 +2,7 @@
 
 <h2><%= @problem.topic %></h2>
 <p><%= @problem.problem_text %><p>
+<% @parts.each do |part| %>
+  <p><%= part.statement %></p>
+  <p><%= part.answer %></p>
+<% end %>

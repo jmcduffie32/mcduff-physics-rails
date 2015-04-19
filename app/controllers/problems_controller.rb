@@ -6,6 +6,7 @@ class ProblemsController < ApplicationController
 
   def show
     @problem = Problem.find(params[:id])
+    @parts = @problem.problem_parts
   end
 
   def new
@@ -33,7 +34,8 @@ class ProblemsController < ApplicationController
 
   private
     def problem_params
-      params.require(:problem).permit(:topic, :problem_text)
+      params.require(:problem).permit(:topic, :problem_text,
+                                     problem_parts_attributes: [:statement,:answer])
     end
     def common_content
       @page = "main"
