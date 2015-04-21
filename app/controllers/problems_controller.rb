@@ -1,16 +1,19 @@
 class ProblemsController < ApplicationController
-  before_filter :common_content, :except => [:destroy, :delete]
+  before_action :common_content, :except => :destroy
+  before_action :find_problem, :only => [:show, :edit, :update, :destroy]
   def index
     @problems = Problem.all
   end
 
   def show
-    @problem = Problem.find(params[:id])
-    @parts = @problem.problem_parts
   end
 
   def new
     @problem = Problem.new
+  end
+
+  def edit
+    
   end
 
   def create
@@ -24,19 +27,29 @@ class ProblemsController < ApplicationController
   end
 
   def update
+    if @problem.update(problem_params)
+      flash[:success] = "Problem updated"
+      redirect_to @problem
+    else
+      render :edit
+    end
   end
 
-  def delete
-  end
 
   def destroy
   end
 
   private
     def problem_params
-      params.require(:problem).permit(:topic, :problem_text,
-                                     problem_parts_attributes: [:statement,:answer])
+      params.require(:problem).permit(:topic, :problem_text,:id,
+                                     problem_parts_attributes: [:statement,:answer,:id,:_destroy])
     end
+
+    def find_problem
+      @problem = Problem.find(params[:id])
+      @parts = @problem.problem_parts
+    end
+
     def common_content
       @page = "main"
     end

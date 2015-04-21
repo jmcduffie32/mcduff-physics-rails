@@ -1,5 +1,6 @@
 class AssignmentsController < ApplicationController
-  before_filter :common_content, :except => :destroy
+  before_action :common_content, :except => :destroy
+  before_action :find_assignment, :only => [:show, :update, :edit, :destory]
 
   def new
     @assignment = Assignment.new
@@ -28,7 +29,6 @@ class AssignmentsController < ApplicationController
   end
 
   def show
-    @assignment = Assignment.find(params[:id])
   end
 
   def update
@@ -41,6 +41,10 @@ class AssignmentsController < ApplicationController
 
     def assignment_params
       params.require(:assignment).permit(:name)
+    end
+
+    def find_assignment
+      @assignment = Assignment.find(params[:id])
     end
 
     def problem_list

@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'subjects/index'
+
+  get 'subjects/show'
+
+  get 'subjects/create'
+
+  get 'subjects/delete'
+
+  get 'subjects/destroy'
+
+  get 'subjects/edit'
+
+  get 'subjects/update'
+
+  get 'subjects/new'
+
   resources :questions
   resources :users
   resources :problems

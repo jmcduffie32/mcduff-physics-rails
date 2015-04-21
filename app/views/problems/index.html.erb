@@ -11,6 +11,7 @@
       <td><%= link_to problem.id, problem %></td>
       <td><%= problem.problem_text %></td>
       <td><%= problem.topic %></td>
+      <td><%= link_to 'edit', edit_problem_path(problem) %>
     </tr>
   <% end %>
 </table>
